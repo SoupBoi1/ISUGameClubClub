@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
             }
             else if (transform.position.x > outerWall)
             {
-                if (Math.Abs(transform.position.y) - row < 0.1)
+                if (Math.Abs(transform.position.y - row) < 0.1)
                 {
                     transform.Translate(Vector2.right * speed * Time.deltaTime);
                 }
@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
                 transform.Translate(new Vector2(0, -row).normalized * speed * Time.deltaTime);
             }
         }
-        else
+        else if (this.gameObject.CompareTag("Enemy"))
         {
             if (transform.position.x > outerWall)
             {
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
             }
             else if (transform.position.x < innerWall)
             {
-                if (Math.Abs(transform.position.y) - row < 0.1)
+                if (Math.Abs(transform.position.y - row) < 0.1)
                 {
                     transform.Translate(Vector2.left * speed * Time.deltaTime);
                 }
