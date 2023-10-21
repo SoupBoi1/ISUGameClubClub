@@ -6,6 +6,8 @@ public class Money : MonoBehaviour
 {
     /**the amin value*/
     public static float money; // debug public for now may change to priavte in future.
+
+    public float incomerate; // rate of money 
     
 
     // Start is called before the first frame update
@@ -19,6 +21,10 @@ public class Money : MonoBehaviour
     {
         
     }
+
+
+
+
 
     /**
      * this saves money to save

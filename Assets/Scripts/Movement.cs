@@ -5,14 +5,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private static float innerWall = -0.5f;
-    private static float outerWall = 0.5f;
-    private static float lowerWall = -1.0f;
-    private static float upperWall = 1.0f;
-
     public bool fighting = false;
     public float speed;
-    public Transform transform;
     public float row; // Should be half integers, i.e. 0.5, 1.5, 2.5
     void Update()
     {
@@ -20,11 +14,11 @@ public class Movement : MonoBehaviour
             return;
         if(this.gameObject.CompareTag("Player"))
         {
-            if (transform.position.x < innerWall)
+            if (transform.position.x < Constants.INNERWALL)
             {
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
-            else if (transform.position.x > outerWall)
+            else if (transform.position.x > Constants.OUTERWALL)
             {
                 if (Math.Abs(transform.position.y - row) < 0.1)
                 {
@@ -46,11 +40,11 @@ public class Movement : MonoBehaviour
         }
         else if (this.gameObject.CompareTag("Enemy"))
         {
-            if (transform.position.x > outerWall)
+            if (transform.position.x > Constants.OUTERWALL)
             {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
             }
-            else if (transform.position.x < innerWall)
+            else if (transform.position.x < Constants.INNERWALL)
             {
                 if (Math.Abs(transform.position.y - row) < 0.1)
                 {
