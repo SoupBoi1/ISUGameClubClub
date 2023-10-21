@@ -44,15 +44,22 @@ public class Money : MonoBehaviour
         return money;
     }
 
+    public float setMoney(float m) {
+        money = m;
+        return money;
+    }
     /**
      * add money to the money
      * retruns money 
      */
     public float addMoney(float moneyadded)
     {
-        money = moneyadded;
+        money += moneyadded;
         return money; 
     }
+
+
+
     /**
      * subractes money to the money
      * retruns money 
