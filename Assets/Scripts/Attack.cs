@@ -5,39 +5,25 @@ using System;
 
 public class Attack : MonoBehaviour
 {
-    public CircleCollider2D attackCollider;
-    public BoxCollider2D defendCollider;
-    int health = 100;
-    int attackDamage = 1;
-    int armor = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (health <= 0) {
-            Destroy(this.gameObject);
-        }
-    }
+    public CircleCollider2D collider;
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (gameObject.tag == "Player" && other.gameObject.tag == "Enemy")
+        if (gameObject.tag == "Defense")
         {
-            other.gameObject.GetComponent<Attack>().TakeAttack(attackDamage);
+            return;
         }
-        else if (gameObject.tag == "Enemy" && other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Attack>().TakeAttack(attackDamage);
-        }
-    }
 
-    public void TakeAttack(int attackDamage) {
-        health -= Math.Max(attackDamage - (armor / 2), 1);
+        string mytag = gameObject.transform.parent.gameObject.tag;
+        string othertag = other.gameObject.transform.parent.gameObject.tag;
+
+        if (mytag == "Player" && othertag == "Enemy")
+        {
+            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
+        }
+        else if (mytag == "Enemy" && othertag == "Player")
+        {
+            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
+        }
     }
 }
