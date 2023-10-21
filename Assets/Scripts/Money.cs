@@ -5,7 +5,7 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     /**the amin value*/
-    public float money; // debug public for now may change to priavte in future.
+    public static float money; // debug public for now may change to priavte in future.
     
 
     // Start is called before the first frame update
