@@ -6,20 +6,25 @@ public class Factory : MonoBehaviour
 {
     public Movement prefab;
     public float spawnTime;
-    public float timer;
+    public float timer = 0.0f;
     public float row;
 
-    private void Start()
+    private static float coolDownMod = -1.0f;
+
+    private void Awake()
     {
-        timer = spawnTime;
+        if(coolDownMod < 0.0f)
+        {
+            coolDownMod = Mathf.Pow(0.9f, Upgrade.fCooldown);
+        }
     }
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if(timer < 0.0f)
+        timer += Time.deltaTime;
+        if(timer > spawnTime * coolDownMod)
         {
-            timer = spawnTime;
+            timer = 0.0f;
             Movement m = Instantiate(prefab);
             m.row = row;
             m.transform.position = this.transform.position;
