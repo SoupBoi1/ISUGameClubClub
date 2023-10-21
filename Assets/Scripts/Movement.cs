@@ -7,7 +7,6 @@ public class Movement : MonoBehaviour
 {
     public bool fighting = false;
     public float speed;
-    public Transform transform;
     public float row; // Should be half integers, i.e. 0.5, 1.5, 2.5
     void Update()
     {
