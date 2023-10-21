@@ -64,5 +64,10 @@ public class Movement : MonoBehaviour
                 transform.Translate(new Vector2(0, -row).normalized * speed * Time.deltaTime);
             }
         }
+
+        if (transform.position.x < Constants.SCREEN_LEFT) {
+            Destroy(this.gameObject);
+            GameManager.Instance.LoseLife(1);
+        }
     }
 }

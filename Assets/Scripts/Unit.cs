@@ -9,11 +9,12 @@ public class Unit : MonoBehaviour
     public int attackDamage;
     public int armor;
     public float attackCooldown;
+    public Movement movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Unit spawned");
     }
 
     void Update()

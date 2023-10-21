@@ -9,15 +9,10 @@ public class Attack : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (gameObject.tag == "Defense")
-        {
-            return;
-        }
-
-        string mytag = gameObject.transform.parent.gameObject.tag;
-        string othertag = other.gameObject.transform.parent.gameObject.tag;
-
-        if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
+                    Debug.Log("Attack" + other.gameObject.transform.parent.gameObject.name);
+        bool mytag = gameObject.transform.parent.gameObject.CompareTag("Player");
+        bool othertag = other.gameObject.transform.parent.gameObject.CompareTag("Player");
+        if (mytag != othertag)
         {
             other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
         }
