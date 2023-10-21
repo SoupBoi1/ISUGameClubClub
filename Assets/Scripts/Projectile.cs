@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Collider2D collider;
     public Vector2 direction;
     public float speed;
 
