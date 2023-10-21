@@ -8,8 +8,7 @@ public class Unit : MonoBehaviour
     public int health;
     public int attackDamage;
     public int armor;
-    public int power;
-    public double attackCooldown;
+    public float attackCooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +22,10 @@ public class Unit : MonoBehaviour
             Destroy(this.gameObject);
         }
         attackCooldown -= Time.deltaTime;
+    }
+
+    public bool CanAttack() {
+        return attackCooldown <= 0;
     }
 
     public void TakeAttack(Transform attacker) {

@@ -28,5 +28,7 @@ public class Projectile : MonoBehaviour
         {
             collision.gameObject.GetComponent<Unit>().TakeAttack(collision.gameObject.transform.parent);
         }
+
+        Destroy(this.gameObject);
     }
 }

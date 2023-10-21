@@ -5,11 +5,12 @@ using UnityEngine;
 public class Ranged : MonoBehaviour
 {
     public Projectile projectile;
+    public Unit unit;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        unit = gameObject.transform.parent.gameObject.GetComponent<Unit>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,13 @@ public class Ranged : MonoBehaviour
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
+            if (!unit.CanAttack())
+            {
+                return;
+            }
+
+            unit.attackCooldown = 1.0f;
+
             Projectile p = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
             
             p.direction = (other.gameObject.transform.parent.position - gameObject.transform.parent.position).normalized;
