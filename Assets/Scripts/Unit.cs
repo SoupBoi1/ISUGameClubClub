@@ -5,9 +5,10 @@ using System;
 
 public class Unit : MonoBehaviour
 {
-    int health = 100;
-    int attackDamage = 1;
-    int armor = 0;
+    public int health;
+    public int attackDamage;
+    public int armor;
+    public int power;
 
     // Start is called before the first frame update
     void Start()
