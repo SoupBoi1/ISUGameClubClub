@@ -17,11 +17,7 @@ public class Attack : MonoBehaviour
         string mytag = gameObject.transform.parent.gameObject.tag;
         string othertag = other.gameObject.transform.parent.gameObject.tag;
 
-        if (mytag == "Player" && othertag == "Enemy")
-        {
-            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
-        }
-        else if (mytag == "Enemy" && othertag == "Player")
+        if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
             other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
         }
