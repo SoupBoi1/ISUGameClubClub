@@ -29,12 +29,7 @@ public class Unit : MonoBehaviour
         return attackCooldown <= 0;
     }
 
-    public void TakeAttack(Transform attacker) {
-        
-        Debug.Log(attacker.ToString());
-        GameObject att = attacker.gameObject;
-        Unit unit = att.GetComponent<Unit>();
-        int attackDamage = unit.attackDamage;
+    public void TakeAttack(int attackDamage) {
         health -= Math.Max(attackDamage - (armor / 2), 1);
         Debug.Log("Unit took " + Math.Max(attackDamage - (armor / 2), 1) + " damage. Current health: " + health);
     }

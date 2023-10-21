@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
         bool othertag = other.gameObject.CompareTag("Player");
         if (mytag != othertag)
         {
-            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
+            other.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
         }
     }
 
@@ -24,7 +24,7 @@ public class Attack : MonoBehaviour
         bool othertag = other.gameObject.CompareTag("Player");
         if (mytag != othertag)
         {
-            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
+            other.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
         }
     }
 
