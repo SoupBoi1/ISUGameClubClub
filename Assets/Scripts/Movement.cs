@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
                 transform.Translate(new Vector2(0, -row).normalized * speed * Time.deltaTime);
             }
         }
-        else
+        else if (this.gameObject.CompareTag("Enemy"))
         {
             if (transform.position.x > outerWall)
             {
