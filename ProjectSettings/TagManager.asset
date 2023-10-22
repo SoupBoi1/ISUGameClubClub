@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: topPiece
+    uniqueID: 2310799289
+    locked: 0
+  - name: troops
+    uniqueID: 1913641099
+    locked: 0
+  - name: bottomPiece
+    uniqueID: 3469715059
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
