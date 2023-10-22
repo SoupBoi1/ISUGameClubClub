@@ -5,16 +5,26 @@ using System;
 
 public class Attack : MonoBehaviour
 {
-    public CircleCollider2D collider;
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Attack " + other.gameObject.name);
+        bool mytag = gameObject.CompareTag("Player");
+        bool othertag = other.gameObject.CompareTag("Player");
+        if (mytag != othertag)
+        {
+            other.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
+        }
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
-                    Debug.Log("Attack" + other.gameObject.transform.parent.gameObject.name);
-        bool mytag = gameObject.transform.parent.gameObject.CompareTag("Player");
-        bool othertag = other.gameObject.transform.parent.gameObject.CompareTag("Player");
+                    Debug.Log("Attack " + other.gameObject.name);
+        bool mytag = gameObject.CompareTag("Player");
+        bool othertag = other.gameObject.CompareTag("Player");
         if (mytag != othertag)
         {
-            other.gameObject.GetComponent<Unit>().TakeAttack(other.gameObject.transform.parent);
+            other.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
         }
     }
 

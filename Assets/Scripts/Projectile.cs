@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Collider2D collider;
     public Vector2 direction;
     public float speed;
 
@@ -26,7 +25,7 @@ public class Projectile : MonoBehaviour
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
-            collision.gameObject.GetComponent<Unit>().TakeAttack(collision.gameObject.transform.parent);
+            collision.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
         }
 
         Destroy(this.gameObject);
