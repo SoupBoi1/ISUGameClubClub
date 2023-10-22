@@ -15,11 +15,17 @@ public class Movement : MonoBehaviour
 
     public Animator animator;
 
+    
     private void Awake()
     {
         if (speedMod < 0.0f)
         {
             speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.speed);
+        }
+
+        if (GetComponent<Animator>())
+        {
+            animator = GetComponent<Animator>();
         }
     }
 
@@ -32,9 +38,22 @@ public class Movement : MonoBehaviour
     {
         if (fighting)
         {
-            if (animator != null) animator.SetBool("attacking", true);
+            if (animator != null)
+            {
+                animator.SetBool("isMelee", fighting);
+                animator.SetBool("attacking", fighting);
+            }
             return;
         }
+        else {
+
+            if (animator != null)
+            {
+                animator.SetBool("isMelee", fighting);
+                animator.SetBool("attacking", fighting);
+            }
+        }
+
         if(gameObject.CompareTag("Player"))
         {
             if (animator != null) animator.SetBool("attacking", false);
@@ -101,5 +120,10 @@ public class Movement : MonoBehaviour
             Destroy(this.gameObject);
             GameManager.Instance.LoseLife(1);
         }
+
+
+        
+        
+
     }
 }
