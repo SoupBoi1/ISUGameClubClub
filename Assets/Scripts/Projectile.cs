@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
             var p = collision.gameObject;
 
             try {
-            int rem = p.GetComponent<Unit>().TakeAttack(damage);
+            int rem = p.GetComponent<Unit>().TakeAttack(damage + mytag == "Player"?Upgrade.rDamage:0);
             } catch (System.Exception e) {
                 Debug.Log(e);
             }

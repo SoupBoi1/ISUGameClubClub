@@ -7,18 +7,17 @@ using TMPro;
 
 public class showMoney : MonoBehaviour
 {
-
-    public TMP_Text textmeshPro ;
+    public Text text ;
     // Start is called before the first frame update
     void Start()
     {
-        TMP_Text textmeshPro = GetComponent<TMP_Text>();
+        Text textmeshPro = GetComponent<Text>();
       
     }
 
     // Update is called once per frame
     void Update()
     {
-        textmeshPro.text = Money.Instance.getMoney()+ " clubs" ;
+        text.text = Money.Instance.getMoney()+ " clubs" ;
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7843489823188819367}
   - component: {fileID: 1672010312485839246}
-  - component: {fileID: -675122390538853328}
+  - component: {fileID: -4734468991890107923}
   m_Layer: 0
   m_Name: TFactorySelectable
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   cost: 200
   prefab: {fileID: 6652226963094721242, guid: 7407e10163140f54bacaf59dd266d869, type: 3}
   previewPrefab: {fileID: 2207023910836752337, guid: f20b16b24c8f75745b92d99d82529335, type: 3}
---- !u!50 &-675122390538853328
+--- !u!50 &-4734468991890107923
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

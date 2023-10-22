@@ -12,9 +12,17 @@ public class Unit : MonoBehaviour
     public float startCooldown;
     public Movement movement;
 
-    // Start is called before the first frame update
-    void Start()
+    private static float coolDownMod = -1.0f;
+    private void Awake()
     {
+        if(coolDownMod < 0.0f)
+            coolDownMod = 1.0f - Mathf.Pow(1.1f, Upgrade.cooldown);
+    }
+
+    private void Start()
+    {
+        if(gameObject.tag == "Player")
+            health += (int)(Upgrade.health * 0.1f * health);
     }
 
     void Update()
@@ -30,7 +38,7 @@ public class Unit : MonoBehaviour
     }
 
     public bool CanAttack() {
-        return attackCooldown <= 0;
+        return attackCooldown <= 0.0f + coolDownMod;
     }
 
     public int TakeAttack(int attackDamage) {
