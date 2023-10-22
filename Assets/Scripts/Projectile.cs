@@ -18,6 +18,11 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * direction * Time.deltaTime);
+
+        if (transform.position.x > Constants.SCREEN_RIGHT || transform.position.x < Constants.SCREEN_LEFT || transform.position.y > 10 || transform.position.y < -10)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -32,18 +37,15 @@ public class Projectile : MonoBehaviour
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
-            // Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
-            var p = collision.gameObject.transform.parent;
-            try
-            {
-                p.GetComponent<Unit>().TakeAttack(damage);
-                Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
-                Destroy(this.gameObject);
+            var p = collision.gameObject;
+
+            try {
+            int rem = p.GetComponent<Unit>().TakeAttack(damage);
+            } catch (System.Exception e) {
+                Debug.Log(e);
             }
-            catch (System.NullReferenceException e)
-            {
-                // Debug.Log("NullReferenceException");
-            }
+            Destroy(this.gameObject);
+
 
         }
 

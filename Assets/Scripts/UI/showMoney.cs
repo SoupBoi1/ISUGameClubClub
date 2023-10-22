@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UnityEngine.UI;
 using TMPro;
 
 public class showMoney : MonoBehaviour
