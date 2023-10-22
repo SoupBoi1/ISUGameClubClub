@@ -28,6 +28,12 @@ public class buttonDropDown : MonoBehaviour
 
     public void moveDown()
     {
+        if (GameManager.Instance.step == 1)
+        {
+            GameManager.Instance.buyMessage.SetActive(false);
+            GameManager.Instance.insideShopMessage.SetActive(true);
+            GameManager.Instance.step = 2;
+        }
         if (!down)
         {
             transform.position = buttonDownPos.position;
@@ -40,6 +46,12 @@ public class buttonDropDown : MonoBehaviour
 
         if (down)
         {
+            if (GameManager.Instance.step == 2)
+            {
+                GameManager.Instance.insideShopMessage.SetActive(false);
+                GameManager.Instance.outsideShopMessage.SetActive(true);
+                GameManager.Instance.step = 3;
+            }
             opss.position = buttonUpPos.position;
 
             theShopPanel.SetActive(false);

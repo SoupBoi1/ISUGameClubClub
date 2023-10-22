@@ -6,7 +6,7 @@ public class Upgrade : MonoBehaviour
 {
     public static Upgrade Instance;
 
-    public bool firstTime = true;
+    public static bool firstTime = true;
 
     public static int clubDamage = 0;
     public static int clubCooldown= 0;
