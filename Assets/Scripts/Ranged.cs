@@ -21,11 +21,6 @@ public class Ranged : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (gameObject.tag == "Defense")
-        {
-            return;
-        }
-
         string mytag = gameObject.transform.parent.gameObject.tag;
         string othertag = other.gameObject.transform.parent.gameObject.tag;
 
