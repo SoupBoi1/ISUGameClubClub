@@ -17,6 +17,8 @@ public class Attack : MonoBehaviour
     //     }
     // }
 
+    
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("AttackRange")) {

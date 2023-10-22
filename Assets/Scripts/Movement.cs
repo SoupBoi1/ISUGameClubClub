@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     private float speedMod = -1.0f;
     private float dir = 1.0f;
 
+    public Animator animator;
+
     private void Awake()
     {
         if (speedMod < 0.0f)
@@ -25,9 +27,13 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (fighting)
+        {
+            if (animator != null) animator.SetBool("attacking", true);
             return;
+        }
         if(gameObject.CompareTag("Player"))
         {
+            if (animator != null) animator.SetBool("attacking", false);
             if (transform.position.x < Constants.INNERWALL)
             {
                 transform.Translate(Vector2.right * (speed + speedMod) * Time.deltaTime);
