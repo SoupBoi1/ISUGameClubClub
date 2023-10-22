@@ -17,6 +17,15 @@ public class Attack : MonoBehaviour
     //     }
     // }
 
+
+    void Update()
+    {
+        if (gameObject.GetComponent<Unit>().CanAttack())
+        {
+            gameObject.GetComponent<Unit>().movement.fighting = false;
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("AttackRange"))
@@ -30,7 +39,7 @@ public class Attack : MonoBehaviour
         bool othertag = other.gameObject.CompareTag("Player");
         if (mytag != othertag)
         {
-                            gameObject.GetComponent<Unit>().movement.fighting = true;
+            gameObject.GetComponent<Unit>().movement.fighting = true;
             var p = other.gameObject;
 
             if (!gameObject.GetComponent<Unit>().CanAttack())
