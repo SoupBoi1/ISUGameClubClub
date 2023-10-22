@@ -16,8 +16,10 @@ public abstract class Selectable : MonoBehaviour
 
     public void select()
     {
-        if (!preview)
+        if (!preview) {
+            Debug.Log(5);
             preview = Instantiate(previewPrefab);
+        }
     }
     public void Deselect()
     {
@@ -26,6 +28,7 @@ public abstract class Selectable : MonoBehaviour
     }
     public void Place()
     {
+        Debug.Log(6);
         GameObject obj = Instantiate(prefab);
         obj.transform.position = preview.transform.position;
     }
