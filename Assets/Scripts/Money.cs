@@ -7,7 +7,9 @@ public class Money : MonoBehaviour
     /**the amin value*/
     public static float money; // debug public for now may change to priavte in future.
 
-    public float incomerate; // rate of money 
+    public float incomerate; // rate of money
+
+
     
 
     // Start is called before the first frame update
@@ -23,6 +25,9 @@ public class Money : MonoBehaviour
     }
 
 
+    public  string getMonenyInString() {
+        return money + " culbs";
+    }
 
 
 
@@ -45,12 +50,12 @@ public class Money : MonoBehaviour
     /**
      * return the amount of money
      */
-    public float getMoney()
+    public static float getMoney()
     {
         return money;
     }
 
-    public float setMoney(float m) {
+    public static float setMoney(float m) {
         money = m;
         return money;
     }
@@ -58,7 +63,7 @@ public class Money : MonoBehaviour
      * add money to the money
      * retruns money 
      */
-    public float addMoney(float moneyadded)
+    public static float addMoney(float moneyadded)
     {
         money += moneyadded;
         return money; 
@@ -70,7 +75,7 @@ public class Money : MonoBehaviour
      * subractes money to the money
      * retruns money 
      */
-    public float subMoney(float m)
+    public static  float subMoney(float m)
     {
         money -= m;
         return money;
