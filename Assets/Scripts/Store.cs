@@ -76,6 +76,12 @@ public class Store : MonoBehaviour
         {
             selected.Deselect();
             selected = null;
+            if(GameManager.Instance.step == 3)
+            {
+                GameManager.Instance.outsideShopMessage.SetActive(false);
+                GameManager.Instance.partingMessage.SetActive(true);
+                GameManager.Instance.step = 4;
+            }
         }
     }
 }
