@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 /** class that manages money of the player basically a wallet **/
 public class Money : MonoBehaviour
 {
     /**the amin value*/
     public static float money; // debug public for now may change to priavte in future.
+    public TextMeshProUGUI displayText;
 
-    public float incomerate; // rate of money 
-    
+    public float incomeRate; // rate of money
+
+    public static Money Instance;
+
+    private static int time;
+
+    private void Awake()
+    {
+        if (Instance)
+            Debug.LogError("More than one Money in the scene!");
+        Instance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +32,23 @@ public class Money : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateMoney();
+        if(time < Time.timeSinceLevelLoad)
+        {
+            time++;
+            money += incomeRate;
+        }
     }
 
 
+    public  string getMonenyInString() {
+        return money + " clubs";
+    }
 
-
+    private void UpdateMoney()
+    {
+        displayText.text = getMonenyInString();
+    }
 
     /**
      * this saves money to save

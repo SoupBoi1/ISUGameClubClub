@@ -7,7 +7,6 @@ public class Factory : MonoBehaviour
     public Movement prefab;
     public float spawnTime;
     public float timer = 0.0f;
-    public float row;
 
     private static float coolDownMod = -1.0f;
 
@@ -26,7 +25,6 @@ public class Factory : MonoBehaviour
         {
             timer = 0.0f;
             Movement m = Instantiate(prefab);
-            m.row = row;
             m.transform.position = this.transform.position;
         }
     }

@@ -16,6 +16,31 @@ public class Store : MonoBehaviour
         Instance = this;
     }
 
+    public void SelectClubber()
+    {
+        if (selected)
+            selected.Deselect();
+        selected = Instantiate(items[0]);
+    }
+    public void SelectThrower()
+    {
+        if (selected)
+            selected.Deselect();
+        selected = Instantiate(items[1]);
+    }
+    public void SelectClubberFactory()
+    {
+        if (selected)
+            selected.Deselect();
+        selected = Instantiate(items[2]);
+    }
+    public void SelectThrowerFactory()
+    {
+        if (selected)
+            selected.Deselect();
+        selected = Instantiate(items[3]);
+    }
+
     void Update()
     {
         if (selected && Input.GetMouseButtonDown(0))

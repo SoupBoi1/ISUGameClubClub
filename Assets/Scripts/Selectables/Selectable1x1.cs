@@ -9,9 +9,11 @@ public class Selectable1x1 : Selectable
 {
     public override void Move()
     {
-        Vector2 loc = Input.mousePosition;
-        loc.x = (int)(loc.x + 0.5f) + 0.5f;
-        loc.y = (int)(loc.y + 0.5f) + 0.5f;
+        Vector3 loc = Input.mousePosition;
+        loc.z = 18.0f;
+        loc = Camera.main.ScreenToWorldPoint(loc);
+        loc.x = Mathf.Floor(Mathf.Min(Mathf.Max(loc.x, -5.0f), -1.0f)) + 0.5f;
+        loc.y = Mathf.Floor(Mathf.Min(Mathf.Max(loc.y, -4.0f), 3.0f)) + 0.5f;
         preview.transform.position = loc;
     }
 }

@@ -14,19 +14,25 @@ public abstract class Selectable : MonoBehaviour
 
     public abstract void Move();
 
-    public void select()
+    private void Start()
     {
-        if (!preview)
-            preview = Instantiate(previewPrefab);
+        preview = Instantiate(previewPrefab);
     }
     public void Deselect()
     {
         if (preview)
             Destroy(preview);
+        Destroy(gameObject);
     }
     public void Place()
     {
         GameObject obj = Instantiate(prefab);
         obj.transform.position = preview.transform.position;
+    }
+
+    private void Update()
+    {
+        if(preview)
+            Move();
     }
 }
