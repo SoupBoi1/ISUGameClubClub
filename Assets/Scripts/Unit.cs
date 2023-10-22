@@ -28,7 +28,6 @@ public class Unit : MonoBehaviour
     void Update()
     {
         if (health <= 0) {
-            Debug.Log(gameObject.name + " died");
             if (gameObject.transform.childCount > 0) {
                 Destroy(gameObject.transform.GetChild(0).gameObject);
             }
