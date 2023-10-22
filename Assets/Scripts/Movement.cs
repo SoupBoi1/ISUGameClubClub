@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -18,11 +19,14 @@ public class Movement : MonoBehaviour
     {
         if (speedMod < 0.0f)
         {
-            speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.MSpeed);
+            speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.speed);
         }
     }
 
-
+    private void Start()
+    {
+        row = transform.position.y;
+    }
 
     void Update()
     {
@@ -63,7 +67,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                transform.Translate(new Vector2(0, -row).normalized * (speed + speedMod) * Time.deltaTime);
+                transform.Translate(new Vector2(0, -transform.position.y).normalized * (speed + speedMod) * Time.deltaTime);
             }
         }
         else if (gameObject.CompareTag("Enemy"))

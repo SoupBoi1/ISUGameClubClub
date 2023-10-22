@@ -14,19 +14,33 @@ public abstract class Selectable : MonoBehaviour
 
     public abstract void Move();
 
-    public void select()
+    private void Start()
     {
-        if (!preview)
-            preview = Instantiate(previewPrefab);
+        preview = Instantiate(previewPrefab);
     }
     public void Deselect()
     {
         if (preview)
             Destroy(preview);
+        Destroy(gameObject);
     }
     public void Place()
     {
         GameObject obj = Instantiate(prefab);
         obj.transform.position = preview.transform.position;
+        if (preview.GetComponent<Placeable>() != null)
+        {
+            Store.Instance.factories.Add(obj);
+        }
+    }
+
+    private void Update()
+    {
+        if (!Store.Instance.canPlace)
+            preview.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f);
+        else
+            preview.gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f);
+        if (preview)
+            Move();
     }
 }

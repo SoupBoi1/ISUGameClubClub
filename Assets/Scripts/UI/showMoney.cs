@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UnityEngine.UI;
 using TMPro;
 
 public class showMoney : MonoBehaviour
@@ -20,8 +19,6 @@ public class showMoney : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textmeshPro.text = Money.getMoney()+ " clubs" ;
-
-
+        textmeshPro.text = Money.Instance.getMoney()+ " clubs" ;
     }
 }

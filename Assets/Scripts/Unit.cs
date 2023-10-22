@@ -9,17 +9,21 @@ public class Unit : MonoBehaviour
     public int attackDamage;
     public int armor;
     public float attackCooldown;
+    public float startCooldown;
     public Movement movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Debug.Log("Unit spawned");
     }
 
     void Update()
     {
         if (health <= 0) {
+            Debug.Log(gameObject.name + " died");
+            if (gameObject.transform.childCount > 0) {
+                Destroy(gameObject.transform.GetChild(0).gameObject);
+            }
             Destroy(this.gameObject);
         }
         attackCooldown -= Time.deltaTime;
@@ -33,5 +37,12 @@ public class Unit : MonoBehaviour
         health -= Math.Max(attackDamage - (armor / 2), 1);
         // Debug.Log("Unit took " + Math.Max(attackDamage - (armor / 2), 1) + " damage. Current health: " + health);
         return health;
+    }
+
+    void OnMouseDown()
+    {
+        if (gameObject.CompareTag("Enemy")) {
+            TakeAttack(10);
+        }
     }
 }
