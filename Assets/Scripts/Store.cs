@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Store : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Store : MonoBehaviour
     public bool canPlace = true;
     public Selectable selected;
     public Selectable[] items;
-    public TextMeshProUGUI[] prices;
+    public Text[] prices;
     public List<GameObject> factories = new List<GameObject>();
 
     private float priceMod = -1.0f;
@@ -32,7 +33,7 @@ public class Store : MonoBehaviour
     {
         for(int i = 0; i < items.Length; i++)
         {
-            prices[i].text = "" + items[i].cost * (1.0f +  priceMod);
+            prices[i].text = "" + items[i].cost * (priceMod);
         }
     }
 

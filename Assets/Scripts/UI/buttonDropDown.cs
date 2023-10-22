@@ -34,9 +34,7 @@ public class buttonDropDown : MonoBehaviour
             theShopPanel.SetActive(true);
             down = true;
         }
-        
-        
-
+        GameManager.Instance.Pause();
     }
     public void moveUp() {
 
@@ -47,9 +45,6 @@ public class buttonDropDown : MonoBehaviour
             theShopPanel.SetActive(false);
             down = false;
         }
-        
-
+        GameManager.Instance.Resume();
     }
-
-
 }

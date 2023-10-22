@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     private float dir = 1.0f;
 
     public Animator animator;
+
+    
     private void Awake()
     {
         if (speedMod < 0.0f)
@@ -39,6 +41,7 @@ public class Movement : MonoBehaviour
             if (animator != null)
             {
                 animator.SetBool("isMelee", fighting);
+                animator.SetBool("attacking", fighting)
             }
             return;
         }
@@ -47,11 +50,13 @@ public class Movement : MonoBehaviour
             if (animator != null)
             {
                 animator.SetBool("isMelee", fighting);
+                animator.SetBool("attacking", fighting)
             }
         }
 
         if(gameObject.CompareTag("Player"))
         {
+            if (animator != null) animator.SetBool("attacking", false);
             if (transform.position.x < Constants.INNERWALL)
             {
                 transform.Translate(Vector2.right * (speed + speedMod) * Time.deltaTime);

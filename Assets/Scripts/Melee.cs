@@ -18,6 +18,7 @@ public class Attack : MonoBehaviour
     // }
 
 
+
     void Update()
     {
         if (gameObject.GetComponent<Unit>().CanAttack())
@@ -25,6 +26,7 @@ public class Attack : MonoBehaviour
             gameObject.GetComponent<Unit>().movement.fighting = false;
         }
     }
+
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -49,7 +51,7 @@ public class Attack : MonoBehaviour
 
             gameObject.GetComponent<Unit>().attackCooldown = gameObject.GetComponent<Unit>().startCooldown;
 
-            int rem_health = p.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
+            int rem_health = p.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage + (mytag?Upgrade.mDamage:0));
             if (rem_health > 0)
             {
                 gameObject.GetComponent<Unit>().movement.fighting = true;
