@@ -21,8 +21,12 @@ public class Ranged : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+        if (other.CompareTag("AttackRange")) {
+            return;
+        }
+        // Debug.Log("Ranged " + gameObject.name + " " + other.gameObject.name);
         string mytag = gameObject.transform.parent.gameObject.tag;
-        string othertag = other.gameObject.transform.parent.gameObject.tag;
+        string othertag = other.gameObject.tag;
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
@@ -35,7 +39,7 @@ public class Ranged : MonoBehaviour
 
             Projectile p = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
             
-            p.direction = (other.gameObject.transform.parent.position - gameObject.transform.parent.position).normalized;
+            p.direction = (other.gameObject.transform.position - gameObject.transform.parent.position).normalized;
         }
     }
 }
