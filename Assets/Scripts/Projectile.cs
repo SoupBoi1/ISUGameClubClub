@@ -37,7 +37,6 @@ public class Projectile : MonoBehaviour
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
-            Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
             var p = collision.gameObject;
 
             try {

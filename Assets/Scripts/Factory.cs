@@ -25,7 +25,6 @@ public class Factory : MonoBehaviour
         if(timer > spawnTime * coolDownMod)
         {
             timer = 0.0f;
-            Debug.Log(3);
             Movement m = Instantiate(prefab);
             m.row = row;
             m.transform.position = this.transform.position;

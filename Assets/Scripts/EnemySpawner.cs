@@ -103,13 +103,11 @@ public class EnemySpawner : MonoBehaviour
         if (!boss)
         {
             int unit = UnityEngine.Random.Range(0, prefabTiers[tier].members.Length);
-            Debug.Log(1);
             e = Instantiate(prefabTiers[tier].members[unit]);
         }
         else
         {
             int unit = UnityEngine.Random.Range(0, prefabBossTiers[tier].members.Length);
-            Debug.Log(2);
             e = Instantiate(prefabBossTiers[tier].members[unit]);
         }
 

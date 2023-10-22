@@ -9,7 +9,6 @@ public class Ranged : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Ranged spawned");
     }
 
     // Update is called once per frame

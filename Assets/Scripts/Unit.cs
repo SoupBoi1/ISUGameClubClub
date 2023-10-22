@@ -15,7 +15,6 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Unit spawned " + gameObject.name);
     }
 
     void Update()
@@ -43,7 +42,6 @@ public class Unit : MonoBehaviour
     void OnMouseDown()
     {
         if (gameObject.CompareTag("Enemy")) {
-            Debug.Log("Enemy clicked");
             TakeAttack(10);
         }
     }

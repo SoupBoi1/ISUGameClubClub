@@ -41,7 +41,6 @@ public class Attack : MonoBehaviour
             gameObject.GetComponent<Unit>().attackCooldown = gameObject.GetComponent<Unit>().startCooldown;
 
             int rem_health = p.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
-            Debug.Log(rem_health);
             if (rem_health > 0)
             {
                 gameObject.GetComponent<Unit>().movement.fighting = true;
