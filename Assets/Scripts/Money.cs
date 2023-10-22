@@ -6,14 +6,13 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     /**the amin value*/
-    public static float money; // debug public for now may change to priavte in future.
-    public TextMeshProUGUI displayText;
+    public float money; // debug public for now may change to priavte in future.
 
     public float incomeRate; // rate of money
 
     public static Money Instance;
 
-    private static int time;
+    private int time;
 
     private void Awake()
     {
@@ -32,7 +31,6 @@ public class Money : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMoney();
         if(time < Time.timeSinceLevelLoad)
         {
             time++;
@@ -40,14 +38,8 @@ public class Money : MonoBehaviour
         }
     }
 
-
-    public  string getMonenyInString() {
+    public string getMoneyInString() {
         return money + " clubs";
-    }
-
-    private void UpdateMoney()
-    {
-        displayText.text = getMonenyInString();
     }
 
     /**
@@ -69,12 +61,12 @@ public class Money : MonoBehaviour
     /**
      * return the amount of money
      */
-    public static float getMoney()
+    public float getMoney()
     {
         return money;
     }
 
-    public static float setMoney(float m) {
+    public float setMoney(float m) {
         money = m;
         return money;
     }
@@ -82,7 +74,7 @@ public class Money : MonoBehaviour
      * add money to the money
      * retruns money 
      */
-    public static float addMoney(float moneyadded)
+    public float addMoney(float moneyadded)
     {
         money += moneyadded;
         return money; 
@@ -94,7 +86,7 @@ public class Money : MonoBehaviour
      * subractes money to the money
      * retruns money 
      */
-    public static  float subMoney(float m)
+    public float subMoney(float m)
     {
         money -= m;
         return money;

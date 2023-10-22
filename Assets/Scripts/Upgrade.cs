@@ -23,7 +23,7 @@ public class Upgrade : MonoBehaviour
 
     public static bool factory = true;
     public static int fCooldown = 0;
-    public static int fCost = 0;
+    public static int price = 0;
 
     private void Awake()
     {

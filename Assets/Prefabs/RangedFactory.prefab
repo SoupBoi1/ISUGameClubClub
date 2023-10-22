@@ -100,4 +100,3 @@ MonoBehaviour:
   prefab: {fileID: 2107809015022712788, guid: 080c2d7b86631c10ea190af83db537fe, type: 3}
   spawnTime: 3
   timer: 0
-  row: 0

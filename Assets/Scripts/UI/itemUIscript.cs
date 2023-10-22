@@ -25,7 +25,7 @@ public class itemUIscript : MonoBehaviour
 
         
 
-        Money.subMoney(theselectable.cost);
+        Money.Instance.subMoney(theselectable.cost);
 
 
         

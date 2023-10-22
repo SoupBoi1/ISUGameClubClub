@@ -20,8 +20,6 @@ public class showMoney : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textmeshPro.text = Money.getMoney()+ " clubs" ;
-
-
+        textmeshPro.text = Money.Instance.getMoney()+ " clubs" ;
     }
 }
