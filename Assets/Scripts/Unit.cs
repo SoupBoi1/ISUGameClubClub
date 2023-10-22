@@ -14,7 +14,7 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Unit spawned");
+        // Debug.Log("Unit spawned");
     }
 
     void Update()
@@ -29,8 +29,9 @@ public class Unit : MonoBehaviour
         return attackCooldown <= 0;
     }
 
-    public void TakeAttack(int attackDamage) {
+    public int TakeAttack(int attackDamage) {
         health -= Math.Max(attackDamage - (armor / 2), 1);
-        Debug.Log("Unit took " + Math.Max(attackDamage - (armor / 2), 1) + " damage. Current health: " + health);
+        // Debug.Log("Unit took " + Math.Max(attackDamage - (armor / 2), 1) + " damage. Current health: " + health);
+        return health;
     }
 }

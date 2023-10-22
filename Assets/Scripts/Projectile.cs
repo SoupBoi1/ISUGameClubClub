@@ -6,11 +6,12 @@ public class Projectile : MonoBehaviour
 {
     public Vector2 direction;
     public float speed;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,15 +20,32 @@ public class Projectile : MonoBehaviour
         transform.Translate(speed * direction * Time.deltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        string mytag = gameObject.transform.parent.gameObject.tag;
-        string othertag = collision.gameObject.transform.parent.gameObject.tag;
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("AttackRange"))
+        {
+            return;
+        }
+        // Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
+        string mytag = gameObject.tag;
+        string othertag = collision.gameObject.tag;
 
         if (mytag == "Player" && othertag == "Enemy" || mytag == "Enemy" && othertag == "Player")
         {
-            collision.gameObject.GetComponent<Unit>().TakeAttack(gameObject.GetComponent<Unit>().attackDamage);
+            // Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
+            var p = collision.gameObject.transform.parent;
+            try
+            {
+                p.GetComponent<Unit>().TakeAttack(damage);
+                Debug.Log("Projectile " + gameObject.name + " " + collision.gameObject.name);
+                Destroy(this.gameObject);
+            }
+            catch (System.NullReferenceException e)
+            {
+                // Debug.Log("NullReferenceException");
+            }
+
         }
 
-        Destroy(this.gameObject);
     }
 }
