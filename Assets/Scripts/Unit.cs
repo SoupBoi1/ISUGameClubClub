@@ -12,7 +12,9 @@ public class Unit : MonoBehaviour
     public float startCooldown;
     public Movement movement;
 
+
     private static float coolDownMod = -1.0f;
+
     private void Awake()
     {
         if(coolDownMod < 0.0f)
