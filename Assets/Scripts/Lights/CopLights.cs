@@ -33,7 +33,6 @@ public class CopLights : MonoBehaviour
         if (timer >= delay)
         {
             timer = 0f;
-            Debug.Log("changing colors");
             changeColors();
         }
 
@@ -43,7 +42,6 @@ public class CopLights : MonoBehaviour
     {
 
         lt.color = colors[index];
-        Debug.Log(lt.color);
         index++;
         if (index == colors.Length) index = 0;
     }

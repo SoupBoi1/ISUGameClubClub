@@ -29,26 +29,26 @@ public class Movement : MonoBehaviour
         {
             if (transform.position.x < Constants.INNERWALL)
             {
-                transform.Translate(Vector2.right * speed * speedMod * Time.deltaTime);
+                transform.Translate(Vector2.right * (speed + speedMod) * Time.deltaTime);
             }
             else if (transform.position.x > Constants.OUTERWALL)
             {
                 if (Math.Abs(transform.position.y - row) < 0.1)
                 {
-                    transform.Translate(Vector2.right * speed * speedMod * Time.deltaTime);
+                    transform.Translate(Vector2.right * (speed + speedMod) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.Translate(new Vector2(0, row).normalized * speed * speedMod * Time.deltaTime);
+                    transform.Translate(new Vector2(0, row).normalized * (speed + speedMod) * Time.deltaTime);
                 }
             }
             else if (Mathf.Abs(transform.position.y) < 0.1)
             {
-                transform.Translate(Vector2.right * speed * speedMod * Time.deltaTime);
+                transform.Translate(Vector2.right * (speed + speedMod) * Time.deltaTime);
             }
             else
             {
-                transform.Translate(new Vector2(0, -row).normalized * speed * speedMod * Time.deltaTime);
+                transform.Translate(new Vector2(0, -row).normalized * (speed + speedMod) * Time.deltaTime);
             }
         }
         else if (gameObject.CompareTag("Enemy"))
