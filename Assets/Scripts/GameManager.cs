@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int life;
 
-    public 
 
     private void Awake()
     {
