@@ -16,8 +16,9 @@ public abstract class Selectable : MonoBehaviour
 
     public void select()
     {
-        if (!preview)
+        if (!preview) {
             preview = Instantiate(previewPrefab);
+        }
     }
     public void Deselect()
     {

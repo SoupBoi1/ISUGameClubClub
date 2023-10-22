@@ -22,11 +22,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790795819293885766, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: m_Name
-      value: EnemyMelee
+      value: EnemyBoss
       objectReference: {fileID: 0}
     - target: {fileID: 2790795819293885766, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055400073964807825, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055400073964807825, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3055400073964807825, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,21 +76,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4226201512475804148, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226201512475804148, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7343708533065067560, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: speed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8458645646970849050, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: health
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8458645646970849050, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: attackDamage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8458645646970849050, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: startCooldown
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8458645646970849050, guid: 07205584677d3db179b0b2d304a85a74, type: 3}
       propertyPath: attackCooldown
