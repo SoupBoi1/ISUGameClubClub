@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         if (life <= 0)
         {
             Debug.Log("Game Over");
+            SceneManager.LoadScene("death");
         }
     }
 

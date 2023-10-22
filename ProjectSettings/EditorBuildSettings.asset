@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/main screen.unity
     guid: 9f30d1a5814dd4a289ef2f5451448c9c
   - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 8b8e584adbac57b4aa1fbdfaf95d37ee
+  - enabled: 0
     path: Assets/Scenes/joescene.unity
     guid: b542cda2d947a944da805dd3f754b57a
+  - enabled: 1
+    path: Assets/Scenes/death.unity
+    guid: bd56a8a10338145be8c66151eede3cf2
   m_configObjects: {}
