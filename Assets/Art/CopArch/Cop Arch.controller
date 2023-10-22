@@ -86,7 +86,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CoolLadyMelee
-  m_Speed: 1
+  m_Speed: 4.06
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4521742957158148008}
@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fdc4e41772af6462c8da63b147e956be, type: 2}
+  m_Motion: {fileID: 7400000, guid: 661a1d40975bc4ef0ac43761aada31c0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -140,14 +140,14 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: coollady style sheet_0
+  m_Name: Cop Arch
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isMelee
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: speed
     m_Type: 1
@@ -190,7 +190,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5eb2290f9dc7a49f98d200c7cce2d13a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7d20b3b9bb6b045cdbff6d686941640d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -317,7 +317,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ff9af027beb56442eaf522ad4d4428fd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 661a1d40975bc4ef0ac43761aada31c0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

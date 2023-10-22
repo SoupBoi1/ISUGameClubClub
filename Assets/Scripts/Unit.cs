@@ -12,9 +12,12 @@ public class Unit : MonoBehaviour
     public float startCooldown;
     public Movement movement;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     void Update()

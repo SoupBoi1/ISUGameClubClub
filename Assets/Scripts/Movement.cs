@@ -13,11 +13,17 @@ public class Movement : MonoBehaviour
     private float speedMod = -1.0f;
     private float dir = 1.0f;
 
+    public Animator animator;
     private void Awake()
     {
         if (speedMod < 0.0f)
         {
             speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.speed);
+        }
+
+        if (GetComponent<Animator>())
+        {
+            animator = GetComponent<Animator>();
         }
     }
 
@@ -29,7 +35,21 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (fighting)
+        {
+            if (animator != null)
+            {
+                animator.SetBool("isMelee", fighting);
+            }
             return;
+        }
+        else {
+
+            if (animator != null)
+            {
+                animator.SetBool("isMelee", fighting);
+            }
+        }
+
         if(gameObject.CompareTag("Player"))
         {
             if (transform.position.x < Constants.INNERWALL)
@@ -95,5 +115,10 @@ public class Movement : MonoBehaviour
             Destroy(this.gameObject);
             GameManager.Instance.LoseLife(1);
         }
+
+
+        
+        
+
     }
 }
