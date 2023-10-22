@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     {
         if (speedMod < 0.0f)
         {
-            speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.mSpeed);
+            speedMod = 1.0f - Mathf.Pow(0.9f, Upgrade.MSpeed);
         }
     }
 

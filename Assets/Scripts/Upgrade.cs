@@ -6,70 +6,83 @@ public class Upgrade : MonoBehaviour
 {
     public static Upgrade Instance;
 
-    public static int clubDamage {
+    public static int ClubDamage
+    {
         get { return clubDamage; }
         set { clubDamage++; }
     }
-    public static int clubCooldown {
+    private static int clubDamage = 0;
+    public static int ClubCooldown {
         get { return clubCooldown; }
         set { clubCooldown++; }
     }
+    public static int clubCooldown= 0;
 
     public static bool melee;
-    public static int mDamage
+    public static int MDamage
     {
         get { return mDamage; } 
         set { mDamage++; }
     }
-    public static int mHealth
+    public static int mDamage = 0;
+    public static int MHealth
     {
         get { return mHealth; } 
         set { mHealth++; }
     }
-    public static int mSpeed
+    public static int mHealth= 0;
+    public static int MSpeed
     {
         get { return mSpeed; } 
         set { mSpeed++; }
     }
-    public static int mCooldown
+    public static int mSpeed= 0;
+    public static int MCooldown
     {
         get { return mCooldown; } 
         set { mCooldown++; }
     }
+    public static int mCooldown = 0;
 
     public static bool ranged;
-    public static int rDamage
+    public static int RDamage
     {
         get { return rDamage; } 
         set { rDamage++; }
     }
-    public static int rHealth
+    public static int rDamage = 0;
+    public static int RHealth
     {
         get { return rHealth; } 
         set { rHealth++; }
     }
-    public static int rRange
+    public static int rHealth = 0;
+    public static int RRange
     {
         get { return rRange; } 
         set { rRange++; }
     }
-    public static int rCooldown
+    public static int rRange= 0;
+    public static int RCooldown
     {
         get { return rCooldown; } 
         set { rCooldown++; }
     }
+    public static int rCooldown = 0;
 
     public static bool factory;
-    public static int fCooldown
+    public static int FCooldown
     {
         get { return fCooldown; } 
         set { fCooldown++; }
     }
-    public static int fCost
+    public static int fCooldown = 0;
+    public static int FCost
     {
         get { return fCost; } 
         set { fCost++; }
     }
+    public static int fCost = 0;
 
     private void Awake()
     {
