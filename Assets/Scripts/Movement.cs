@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
             if (animator != null)
             {
                 animator.SetBool("isMelee", fighting);
-                animator.SetBool("attacking", fighting)
+                animator.SetBool("attacking", fighting);
             }
             return;
         }
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
             if (animator != null)
             {
                 animator.SetBool("isMelee", fighting);
-                animator.SetBool("attacking", fighting)
+                animator.SetBool("attacking", fighting);
             }
         }
 
