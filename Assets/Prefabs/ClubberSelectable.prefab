@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
-  prefab: {fileID: 1073040360671214173, guid: e550ee35dbcc1e668adce4152e04212e, type: 3}
-  previewPrefab: {fileID: 8116527571746661665, guid: 9579f04294ad8b4f69b3f309abeee2c5, type: 3}
+  prefab: {fileID: 8116527571746661665, guid: 9579f04294ad8b4f69b3f309abeee2c5, type: 3}
+  previewPrefab: {fileID: 2207023910836752337, guid: 11549d4c0d508604ab461c3dc390914e, type: 3}
 --- !u!50 &-5921456582722366436
 Rigidbody2D:
   serializedVersion: 4
